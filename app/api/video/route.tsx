@@ -3,7 +3,8 @@ import { PrismaClient } from "@prisma/client"
 
 const prisma = new PrismaClient()
 
-export async function GET(req:NextRequest) {
+
+export async function GET(req:NextRequest){ {
     try{
         const videos=await prisma.video.findMany({
             orderBy: {
@@ -18,4 +19,4 @@ export async function GET(req:NextRequest) {
     finally{
         await prisma.$disconnect()
     }
-}
+}}
